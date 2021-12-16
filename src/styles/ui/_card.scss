@@ -32,7 +32,7 @@
     position: relative;
     width: 100%;
     min-height: 100%;
-    @include background('https://via.placeholder.com/1920x1072', center center);
+    @include background("https://via.placeholder.com/1920x1072", center center);
   }
   & .pi-content {
     padding: 70px 40px 24px !important;
@@ -106,7 +106,7 @@
   margin-bottom: $jr-card-margin;
 
   .card-heading {
-    margin-bottom: ($jr-card-margin / 12);
+    margin-bottom: calc($jr-card-margin / 12);
     font-size: 17px;
   }
 
@@ -359,14 +359,14 @@
     padding: 40px 20px;
     margin-bottom: 0;
     text-align: center;
-    @include background('https://via.placeholder.com/370x250', center center);
+    @include background("https://via.placeholder.com/370x250", center center);
     position: relative;
     border-top-left-radius: $border-radius;
     border-top-right-radius: $border-radius;
     overflow: hidden;
 
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       left: 0;
       top: 0;
