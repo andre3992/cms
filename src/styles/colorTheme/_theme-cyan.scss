@@ -1,6 +1,11 @@
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/mixins";
+@import "../global/variables.scss";
+
 /*Theme Cyan Styles*/
 $app-primary-cyan: #00bcd4 !default;
-$secondary-cyan: #69F0AE;
+$secondary-cyan: #69f0ae;
 
 $sidebar-cyan: rgba($app-primary-cyan, 0.25) !default;
 $sidebar-text-cyan: #868e96 !default;
@@ -349,7 +354,6 @@ $link-hover-color: $app-primary;
 }
 
 .cyan .app-top-nav {
-
   & .navbar-nav {
     & li.nav-item > a,
     & li.nav-item > .nav-link {
@@ -379,7 +383,6 @@ $link-hover-color: $app-primary;
 
 .cyan .header-notifications .app-notification {
   & .jr-list-link {
-
     @include hover-focus-active {
       color: $app-primary-cyan;
       border-color: $app-primary-cyan;
@@ -542,7 +545,6 @@ $link-hover-color: $app-primary;
       background-color: $app-primary-cyan;
       border-color: $app-primary-cyan;
     }
-
   }
 
   > .jr-flat-btn {
@@ -591,11 +593,20 @@ $link-hover-color: $app-primary;
 
 // Gradient Color Class
 .cyan .bg-gradient-primary {
-  @include gradient-directional($app-primary-cyan, lighten($app-primary-cyan, 16%), 0deg);
+  @include gradient-directional(
+    $app-primary-cyan,
+    lighten($app-primary-cyan, 16%),
+    0deg
+  );
 }
 
 .cyan .bg-gradient-primary-x {
-  @include gradient-x(darken($app-primary-cyan, 10%), lighten($app-primary-cyan, 16%), 70%, 100%);
+  @include gradient-x(
+    darken($app-primary-cyan, 10%),
+    lighten($app-primary-cyan, 16%),
+    70%,
+    100%
+  );
 }
 
 //Profile style
@@ -614,7 +625,6 @@ $link-hover-color: $app-primary;
 }
 
 .cyan .dropdown-item {
-
   &.active,
   &:active {
     background-color: $app-primary-cyan;
@@ -622,7 +632,6 @@ $link-hover-color: $app-primary;
   }
 
   &[class*="text-"] {
-
     &.active,
     &:active {
       background-color: transparent;

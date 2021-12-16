@@ -4,15 +4,14 @@ Template Name  : CMS - FE Technical - TEST
 Version        : 1.0
 */
 
-
 //Custom Variables
-@import "global/_global-dir";
+@import "../styles/global/_global-dir.scss";
 //Custom Files
-@import "base/_base-dir";
-@import "layout/_layout-dir";
-@import "ui/_ui-dir";
+@import "../styles/base/__base-dir";
+@import "../styles/layout/__layout-dir";
+@import "../styles/ui/__ui-dir";
 @import "slider/slick-carousel";
-@import "module/_module-dir";
-@import "colorTheme/_color-theme-dir";
+@import "../styles/module/_module-dir";
+@import "../styles/colorTheme/_color-theme-dir";
 @import "containers/_containers-dir";
-@import "components/_components-dir";
+@import "../styles/components/__components-dir";

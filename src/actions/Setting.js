@@ -8,27 +8,24 @@
  *
  */
 
-
 import {
-    DARK_THEME,
-    SWITCH_LANGUAGE,
-    THEME_COLOR
-} from '../constants/Settings';
-
+  DARK_THEME,
+  SWITCH_LANGUAGE,
+  THEME_COLOR,
+} from "../constants/Settings";
 
 export function setThemeColor(color) {
-    localStorage.setItem('user_theme', color);
-    return {type: THEME_COLOR, color};
+  localStorage.setItem("user_theme", color);
+  return { type: THEME_COLOR, color };
 }
 
-export function setDarkTheme() {
-    return {type: DARK_THEME};
+export function setDarkTheme(color) {
+  return { type: DARK_THEME };
 }
-
 
 export function switchLanguage(locale) {
-    return {
-        type: SWITCH_LANGUAGE,
-        payload: locale
-    };
+  return {
+    type: SWITCH_LANGUAGE,
+    payload: locale,
+  };
 }

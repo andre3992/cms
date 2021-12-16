@@ -1,7 +1,11 @@
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/mixins";
+@import "../global/variables.scss";
 /*Theme Dark theme Styles*/
-$primary-dark-theme: #38424B !default;
+$primary-dark-theme: #38424b !default;
 $secondary-dark-theme: lighten($primary-dark-theme, 15%);
-$dark-theme-text: #E0E0E0 !default;
+$dark-theme-text: #e0e0e0 !default;
 
 $sidebar-dark-theme: $primary-dark-theme !default;
 $sidebar-text-dark-theme: $dark-theme-text !default;
@@ -11,14 +15,25 @@ $sidebar-darken-dark-theme: darken($primary-dark-theme, 2%);
 $link-hover-dark-theme: darken($dark-theme-text, 5%);
 
 //Default Body Style
-body.dark-theme {
+.dark-theme .app-main-content {
   color: $dark-theme-text;
   background-color: $primary-dark-theme;
 }
 
 //Default card style
 .dark-theme {
-  h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6 {
     color: $dark-theme-text;
   }
 
@@ -320,7 +335,7 @@ body.dark-theme {
   ul.sub-menu {
     background-color: darken($secondary-dark-theme, 5%);
     border-color: darken($secondary-dark-theme, 5%);
-    @include box-shadow(0 1px 4px 0 rgba(0, 0, 0, 0.30));
+    @include box-shadow(0 1px 4px 0 rgba(0, 0, 0, 0.3));
 
     & li a.active,
     & li.active > a,
@@ -414,7 +429,7 @@ body.dark-theme {
 .dark-theme .rbc-toolbar button.rbc-active {
   background-color: rgba($primary-dark-theme, 0.9);
   border-color: lighten($primary-dark-theme, 40%);
-  color: lighten($white, 40%)
+  color: lighten($white, 40%);
 }
 
 .dark-theme .rbc-toolbar button:active:hover,
@@ -423,20 +438,20 @@ body.dark-theme {
 .dark-theme .rbc-toolbar button.rbc-active:focus {
   background-color: rgba($primary-dark-theme, 0.9);
   border-color: lighten($primary-dark-theme, 40%);
-  color: lighten(white, 20%)
+  color: lighten(white, 20%);
 }
 
 .dark-theme .rbc-toolbar button:hover,
 .dark-theme .rbc-toolbar button:focus {
   background-color: rgba($primary-dark-theme, 0.9);
   border-color: lighten($primary-dark-theme, 40%);
-  color: lighten($white, 40%)
+  color: lighten($white, 40%);
 }
 
 .dark-theme .rbc-toolbar button {
   background-color: rgba($primary-dark-theme, 0.9);
   border-color: lighten($primary-dark-theme, 40%);
-  color: lighten($primary-dark-theme, 40%)
+  color: lighten($primary-dark-theme, 40%);
 }
 
 .dark-theme .rbc-show-more {
@@ -756,7 +771,6 @@ body.dark-theme {
       background-color: $primary-dark-theme;
       border-color: $primary-dark-theme;
     }
-
   }
 
   > .jr-flat-btn {
@@ -838,11 +852,20 @@ body.dark-theme {
 
 // Gradient Color Class
 .dark-theme .bg-gradient-primary {
-  @include gradient-directional($primary-dark-theme, lighten($primary-dark-theme, 16%), 0deg);
+  @include gradient-directional(
+    $primary-dark-theme,
+    lighten($primary-dark-theme, 16%),
+    0deg
+  );
 }
 
 .dark-theme .bg-gradient-primary-x {
-  @include gradient-x(darken($primary-dark-theme, 10%), lighten($primary-dark-theme, 16%), 70%, 100%);
+  @include gradient-x(
+    darken($primary-dark-theme, 10%),
+    lighten($primary-dark-theme, 16%),
+    70%,
+    100%
+  );
 }
 
 .dark-theme .bg-dark {

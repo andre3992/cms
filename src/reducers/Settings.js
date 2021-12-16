@@ -18,80 +18,76 @@ import {
   THEME_COLOR,
   TOGGLE_COLLAPSED_NAV,
   HORIZONTAL_NAVIGATION,
-  WINDOW_WIDTH
-} from '../constants/Settings';
+  WINDOW_WIDTH,
+} from "../constants/Settings";
 
-const rltLocale = ['ar'];
+const rltLocale = ["ar"];
 const initialSettings = {
   navCollapsed: false,
   drawerType: FIXED_DRAWER,
-  themeColor: 'cms',
+  themeColor: "cms",
   darkTheme: false,
   width: window.innerWidth,
   isDirectionRTL: false,
   navigationStyle: HORIZONTAL_NAVIGATION,
   locale: {
-    languageId: 'portuguese',
-    locale: 'pt',
-    name: 'Portuguese',
-    icon: 'pt'
-  }
+    languageId: "portuguese",
+    locale: "pt",
+    name: "Portuguese",
+    icon: "pt",
+  },
 };
 
 const settings = (state = initialSettings, action) => {
-
   switch (action.type) {
-    case '@@router/LOCATION_CHANGE':
+    case "@@router/LOCATION_CHANGE":
       return {
         ...state,
-        navCollapsed: false
+        navCollapsed: false,
       };
     case TOGGLE_COLLAPSED_NAV:
       return {
         ...state,
-        navCollapsed: action.isNavCollapsed
+        navCollapsed: action.isNavCollapsed,
       };
     case DRAWER_TYPE:
       return {
         ...state,
-        drawerType: action.drawerType
+        drawerType: action.drawerType,
       };
     case WINDOW_WIDTH:
       return {
         ...state,
-        width: action.width
+        width: action.width,
       };
     case THEME_COLOR:
       return {
         ...state,
         darkTheme: false,
-        themeColor: action.color
+        themeColor: action.color,
       };
     case DARK_THEME:
       return {
         ...state,
-        darkTheme: !state.darkTheme
+        darkTheme: !state.darkTheme,
       };
     case SWITCH_LANGUAGE:
       return {
         ...state,
         locale: action.payload,
-        isDirectionRTL: rltLocale.includes(action.payload.locale)
-
+        isDirectionRTL: rltLocale.includes(action.payload.locale),
       };
     case CHANGE_DIRECTION:
       return {
         ...state,
-        isDirectionRTL: !state.isDirectionRTL
-
+        isDirectionRTL: !state.isDirectionRTL,
       };
 
     case CHANGE_NAVIGATION_STYLE:
       return {
         ...state,
-        navigationStyle: 'HORIZONTAL_NAVIGATION'
+        navigationStyle: "HORIZONTAL_NAVIGATION",
       };
-
 
     default:
       return state;

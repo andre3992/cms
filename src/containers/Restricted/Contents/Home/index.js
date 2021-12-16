@@ -8,17 +8,14 @@
  *
  */
 
-import React, {useEffect} from 'react';
-import IntlMessages from "../../../../util/IntlMessages";
-import { connect } from 'react-redux';
-
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
+import BasicTable from "../../../../components/Tables/basic";
 //actions
-import {
-    requestGetUsers,
-} from "../../../../actions/Users";
+import { requestGetUsers } from "../../../../actions/Users";
 
 //Selectors
-import {getUsers} from "../../../../selectors/Users";
+import { getUsers } from "../../../../selectors/Users";
 
 /**
  * @context Container to Home
@@ -26,35 +23,26 @@ import {getUsers} from "../../../../selectors/Users";
  * @constructor
  */
 const Home = (props) => {
+  const { users } = props;
+  //request get list user
+  useEffect(() => {
+    //willMountComponentWithUseEffect
+    if (!users) props.requestGetUsers();
+  }, [users]); //eslint-disable-line
 
-    const {users} = props;
-
-    //request get list user
-    useEffect(() => {//willMountComponentWithUseEffect
-        if (!users) props.requestGetUsers();
-
-    }, []); //eslint-disable-line
-
-
-    return (
-        <div className="app-body">
-            <div className="app-wrapper">
-                <IntlMessages id={'text.welcome'}/>
-            </div>
-        </div>
-
-
-    );
+  return (
+    <div className="app-body">
+      <div className="app-wrapper">{users ? <BasicTable /> : ""}</div>
+    </div>
+  );
 };
 
-
-const mapStateToProps = ({users}) => {
-    return {
-        users: getUsers(users),
-    }
+const mapStateToProps = ({ users }) => {
+  return {
+    users: getUsers(users),
+  };
 };
-
 
 export default connect(mapStateToProps, {
-    requestGetUsers,
+  requestGetUsers,
 })(Home);

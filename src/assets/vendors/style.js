@@ -5,6 +5,6 @@ import "./react-select/react-select.css";
 import "./animate.css";
 import "./bootstrap-rtl.css";
 import "./loader.css";
-import 'react-notifications/lib/notifications.css';
-import 'styles/bootstrap.scss'
-import 'styles/app.scss';
+import "react-notifications/lib/notifications.css";
+import "styles/bootstrap.scss";
+import "styles/app.scss";

@@ -8,9 +8,8 @@
  *
  */
 
-
-import React from 'react';
-import IntlMessages from 'util/IntlMessages';
+import React from "react";
+import IntlMessages from "util/IntlMessages";
 
 /**
  * @context Container to Footer
@@ -19,9 +18,12 @@ import IntlMessages from 'util/IntlMessages';
  * @constructor
  */
 const Footer = () => (
-	<footer className="app-footer">
-		<span className="d-inline-block">&copy;<IntlMessages id="footer.copyright"/></span>
-	</footer>
+  <footer className="app-footer">
+    <span className="d-inline-block">
+      &copy;
+      <IntlMessages id="footer.copyright" />
+    </span>
+  </footer>
 );
 
 export default Footer;

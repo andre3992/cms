@@ -8,14 +8,14 @@
  *
  */
 
-import {applyMiddleware, compose, createStore} from 'redux';
-import reducers from '../reducers/index';
-import {createBrowserHistory} from 'history'
-import {routerMiddleware} from 'connected-react-router';
-import createSagaMiddleware from 'redux-saga';
-import rootSaga from '../sagas/index';
-import {persistStore, persistReducer} from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
+import { applyMiddleware, compose, createStore } from "redux";
+import reducers from "../reducers/index";
+import { createBrowserHistory } from "history";
+import { routerMiddleware } from "connected-react-router";
+import createSagaMiddleware from "redux-saga";
+import rootSaga from "../sagas/index";
+import { persistStore, persistReducer } from "redux-persist";
+import storage from "redux-persist/lib/storage";
 
 const history = createBrowserHistory();
 const routeMiddleware = routerMiddleware(history);
@@ -23,7 +23,6 @@ const sagaMiddleware = createSagaMiddleware();
 
 const middlewares = [sagaMiddleware, routeMiddleware];
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-
 
 /**
  * persistConfig
@@ -37,34 +36,32 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
  *  }
  */
 const persistConfig = {
-  key: 'cms-fe-technical-test',
+  key: "cms-fe-technical-test",
   storage,
-  blacklist: [
-      'settings',
-      'router'
-  ]
+  blacklist: ["router"],
 };
 
 const persistedReducer = persistReducer(persistConfig, reducers(history));
 
-
 export default function configureStore(initialState) {
-  const store = createStore(persistedReducer, initialState,
-    composeEnhancers(applyMiddleware(...middlewares)));
+  const store = createStore(
+    persistedReducer,
+    initialState,
+    composeEnhancers(applyMiddleware(...middlewares))
+  );
 
   const persistor = persistStore(store);
   sagaMiddleware.run(rootSaga);
 
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers
-    module.hot.accept('../reducers/index', () => {
-      const nextRootReducer = require('../reducers/index');
+    module.hot.accept("../reducers/index", () => {
+      const nextRootReducer = require("../reducers/index");
       store.replaceReducer(nextRootReducer);
     });
   }
 
-  return {store, persistor};
-
+  return { store, persistor };
 }
 
-export {history};
+export { history };

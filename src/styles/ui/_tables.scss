@@ -125,7 +125,7 @@
 }
 
 .table-responsive-material {
-  min-height: .01%;
+  min-height: 0.01%;
   overflow-x: auto;
 }
 
@@ -210,4 +210,8 @@
   & td:last-child {
     padding-right: ($jr-card-padding - 14);
   }
+}
+
+.MuiTableRow-root:hover {
+  background-color: #00bcd4;
 }
