@@ -80,7 +80,7 @@ function BasicTable(props) {
                         dispatch(deleteUser(newState(resp.login, users)))
                       }
                       variant="outlined"
-                      color="error"
+                      id="buttonDelete"
                       startIcon={<DeleteIcon />}
                     >
                       Delete
