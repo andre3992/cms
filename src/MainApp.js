@@ -12,13 +12,13 @@ export const { store, persistor } = configureStore();
 const MainApp = () => (
   <Router>
     <Provider store={store}>
-      {/* <PersistGate persistor={persistor}>*/}
-      <ConnectedRouter history={history}>
-        <Switch>
-          <Route path={`${BASENAME_URL}`} component={App} />
-        </Switch>
-      </ConnectedRouter>
-      {/*  </PersistGate>*/}
+      <PersistGate persistor={persistor}>
+        <ConnectedRouter history={history}>
+          <Switch>
+            <Route path={`${BASENAME_URL}`} component={App} />
+          </Switch>
+        </ConnectedRouter>
+      </PersistGate>
     </Provider>
   </Router>
 );
