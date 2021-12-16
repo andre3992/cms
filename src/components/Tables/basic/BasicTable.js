@@ -15,7 +15,6 @@ import Button from "@mui/material/Button";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { connect } from "react-redux";
 import { newState } from "../../../helpers/deleteUser";
-import { styled } from "@mui/material/styles";
 import PropTypes from "prop-types";
 
 function BasicTable(props) {
@@ -40,34 +39,41 @@ function BasicTable(props) {
     });
   }, [users]);
 
-  const StyledTable = styled(Table)(({ theme }) => ({
-    "&:nth-of-type(odd)": {
-      fontWeight: "bold",
-      textTransform: "uppercase ",
-    },
-  }));
-
   return (
     <Paper className={classes.root}>
       <TableContainer className={classes.container}>
-        <StyledTable stickyHeader aria-label="sticky table">
+        <Table stickyHeader aria-label="sticky table">
           <TableHead>
             <TableRow>
-              <TableCell>Name</TableCell>
-              <TableCell align="right">Twitter</TableCell>
-              <TableCell align="right">Company</TableCell>
-              <TableCell align="right">Location</TableCell>
-              <TableCell align="right">Delete User</TableCell>
+              <TableCell id="bold">Name</TableCell>
+              <TableCell id="bold" align="right">
+                Twitter
+              </TableCell>
+              <TableCell id="bold" align="right">
+                Company
+              </TableCell>
+              <TableCell id="bold" align="right">
+                Location
+              </TableCell>
+              <TableCell id="bold" align="right">
+                Delete User
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {allUsers.map((resp) => {
               return (
                 <TableRow key={resp.id}>
-                  <TableCell>{resp.name}</TableCell>
-                  <TableCell align="right">{resp.twitter_username}</TableCell>
-                  <TableCell align="right">{resp.company}</TableCell>
-                  <TableCell align="right">{resp.location}</TableCell>
+                  <TableCell id="bold">{resp.name}</TableCell>
+                  <TableCell id="bold" align="right">
+                    {resp.twitter_username}
+                  </TableCell>
+                  <TableCell id="bold" align="right">
+                    {resp.company}
+                  </TableCell>
+                  <TableCell id="bold" align="right">
+                    {resp.location}
+                  </TableCell>
                   <TableCell align="right">
                     <Button
                       onClick={() =>
@@ -84,7 +90,7 @@ function BasicTable(props) {
               );
             })}
           </TableBody>
-        </StyledTable>
+        </Table>
       </TableContainer>
     </Paper>
   );
